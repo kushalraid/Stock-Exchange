@@ -1,0 +1,68 @@
+<!DOCTYPE>
+
+<html>
+        <head>
+<!-- Add CSS -->
+<link rel='stylesheet' type='text/css' href='assets/css/app.css'>
+<link rel='stylesheet' type='text/css' href='bower_components/angular-material/angular-material.min.css'>
+<link rel='stylesheet' type='text/css' href='bower_components/angular-material-data-table/dist/md-data-table.min.css'>
+<link rel='stylesheet' type='text/css' href='bower_components/nvd3/build/nv.d3.min.css'>
+
+<!-- Add Libraries -->
+<script src="bower_components/angular/angular.min.js"> </script>
+<script src="bower_components/angular-animate/angular-animate.min.js"> </script>
+<script src="bower_components/angular-messages/angular-messages.min.js"> </script>
+<script src="bower_components/angular-aria/angular-aria.min.js"> </script>
+<script src="bower_components/angular-material/angular-material.min.js"> </script>
+<script src="bower_components/angular-material-data-table/dist/md-data-table.min.js"> </script>
+<script src="bower_components/angular-route/angular-route.min.js"> </script>
+<script src="bower_components/d3/d3.min.js"> </script>
+<script src="bower_components/nvd3/build/nv.d3.min.js"> </script>
+<script src="bower_components/angular-nvd3/dist/angular-nvd3.min.js"> </script>
+<script src="app.js"></script>
+
+<!-- Add all your Services below -->
+<script src="partials/services/socket.call.service.js"></script>
+<script src="partials/services/stock.maintain.service.js"></script>
+
+<!-- Add all your Controllers below -->
+<script src="mains/main.controller.js"></script>
+<script src="partials/controllers/dashboard.controller.js"></script>
+<script src="partials/controllers/extra.controller.js"></script>
+
+<!-- Add all your Other directives etc below -->
+<script src="assets/js/directive/header.directive.js"></script>
+
+<!-- <div class="header">
+    <div>
+        <span>Stock monitor</span>
+    </div>
+</div> -->
+</head>
+<body ng-app="liveStockApp" style="margin:0px;">
+    <div ng-controller="MainController" layout="column" ng-cloak>
+        <section layout="row" flex>
+            <md-sidenav class="md-sidenav-left" md-component-id="left" md-whiteframe="4">
+                <md-toolbar class="md-theme-indigo">
+                    <h1 class="md-toolbar-tools">Menu</h1>
+                </md-toolbar>
+                <md-content>
+                    <md-list class="margin-0">
+                        <md-list-item ng-click="navMenu('dashboard', 0)" ng-class="{'selected-menu hand-over': selectedMenu == 0, 'hand-over': selectedMenu != 0}">
+                            <p>Dashboard</p>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                        <md-list-item ng-click="navMenu('extra', 1)" ng-class="{'selected-menu hand-over': selectedMenu == 1, 'hand-over': selectedMenu != 1}">
+                            <p>Other</p>
+                        </md-list-item>
+                    </md-list>
+                </md-content>
+            </md-sidenav>
+            <md-content flex class="height-100">
+                <div ng-view flex ng-cloak class="view view-animate" layout-fill></div>
+            </md-content>
+        </section>
+    </div>
+</body>
+
+</html>

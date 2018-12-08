@@ -1,0 +1,49 @@
+
+.selected-menu {
+    background: #85819c;
+}
+
+.hand-over:hover {
+    cursor: pointer;
+}
+
+.app-header {
+    width: 100%;
+    position: sticky;
+    top:0px;
+    min-height: 64px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: 102px;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+.margin-0 {
+    margin: 0px !important;
+}
+
+.margin-auto-0 {
+    margin: auto 0px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.white {
+    background-color: white;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "stock-exchange-app",
+  "description": "media .net assignment",
+  "main": "app.js",
+  "authors": [
+    "kushal jain"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-material": "^1.1.10",
+    "angular-material-data-table": "^0.10.10",
+    "angular-route": "^1.7.5",
+    "angular-nvd3": "^1.0.9"
+  }
+}

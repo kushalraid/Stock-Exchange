@@ -1,0 +1,41 @@
+<app-header title="Dashboard"></app-header>
+<div layout="row" layout-align="center center" layout-padding style="height: 80%">
+    <md-card flex-lt-sm="100" flex-sm="50" flex-gt-sm="50">
+        <md-table-container style="overflow: hidden;">
+            <table md-table md-row-select ng-model="selected">
+                <thead fix-head md-head>
+                    <tr md-row>
+                        <th md-column>
+                            <span> Ticker </span>
+                        </th>
+                        <th md-column>
+                            <span> Price </span>
+                        </th>
+                        <th md-column>
+                            <span> Last Update</span>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </md-table-container>
+        <md-table-container flex="100">
+            <table md-table md-row-select ng-model="selected">
+                <tbody md-body>
+                    <tr md-row ng-repeat="(key, value) in liveStockData">
+                        <td md-cell>
+                            <a href="" ng-click="createGraph(key, value)">{{key}}</a>
+                        </td>
+                        <td md-cell class="{{value.colorClass}}"> {{value.values[value.values.length -1]}} </td>
+                        <td md-cell> {{value.time}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </md-card>
+    <md-card flex-lt-sm="100" flex-sm="50" flex-gt-sm="50" style="height: 100%">
+        <nvd3 ng-if="selectedGraphStock" options="graph.optionsLineChart" data="graph.data" api="api1" config="{refreshDataOnly: true, deepWatchDataDepth: 0}"></nvd3>
+        <div ng-if="!selectedGraphStock">
+            Please Select a Ticker
+        </div>
+    </md-card>
+</div>
